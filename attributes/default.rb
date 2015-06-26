@@ -8,7 +8,7 @@
 #
 
 default["posty"]["company_name"]            = "Posty"
-default["tz"]                               = "Europe/Berlin"
+default["tz"]                               = "Asia/Kolkata"
 #default["posty"]["certificate_name"]        = "ssl-cert-snakeoil" # change cert name and place certificate to /etc/ssl/certs/certificate_name.pem and key to /etc/ssl/private/certificate_name.key
 default["posty"]["mail"]["master_user"]     = false # if you set this value to a string e.g. "posty" the master user functionality will be activated and the masterusername is set to "posty". A secure_random password will be generated and written to /etc/dovecot/master-users
 
@@ -31,7 +31,7 @@ default["posty"]["tmp_dir"]          = "/tmp"
 default["posty"]["var_dir"]          = "/var/lib/misc"
 default["posty"]["ruby"]["version"]  = "2.0.0-p481"
 
-default["posty"]["mail"]["hostname"] = node['fqdn']
+default["posty"]["mail"]["hostname"] = node["localhost"]
 default["posty"]["mail"]["domain"]   = "projmgmtprofprograms.org" # This domain is used to generate the postmaster address for emails from the local root user and other important notifications if the domain is example.com we use postmaster@example.com for postmaster notifications and .forward file
 
 default["posty"]["db"]["host"]   = "localhost"
