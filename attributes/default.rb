@@ -55,7 +55,7 @@ default["posty"]["api"]["host"]     = "projmgmtprofprograms.org"
 default["posty"]["api"]["webpath"]  = "posty_api"
 default["posty"]["webui"]["apiurl"] = "https://#{default["posty"]["api"]["host"]}/#{default["posty"]["api"]["webpath"]}/api/v1"
 
-default["posty"]["webui"]["github"]   = "https://github.com/posty/posty_webui"
+default["posty"]["webui"]["github"]   = "https://github.com/kishorekik/posty_webui"
 default["posty"]["webui"]["revision"] = "master"
 default["posty"]["webui"]["location"] = "/srv/posty_webui"
 default["posty"]["webui"]["user"]     = "root"
