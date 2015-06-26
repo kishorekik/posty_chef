@@ -153,3 +153,4 @@ user_query = \
 
 # Query to get a list of all usernames.
 iterate_query = SELECT email AS user FROM users_view
+

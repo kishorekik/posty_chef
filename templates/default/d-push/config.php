@@ -188,7 +188,7 @@
     // connecting to default port (143)
     define('IMAP_PORT', 993);
     // best cross-platform compatibility (see http://php.net/imap_open for options)
-    define('IMAP_OPTIONS', '/ssl/novalidate-cert');
+   // define('IMAP_OPTIONS', '/ssl/novalidate-cert');
     // overwrite the "from" header if it isn't set when sending emails
     // options: 'username'    - the username will be set (usefull if your login is equal to your emailaddress)
     //        'domain'    - the value of the "domain" field is used
@@ -288,3 +288,4 @@
     );
 
 ?>
+

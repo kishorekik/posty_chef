@@ -31,15 +31,14 @@ service 'apache2' do
   supports :status => true, :restart => true, :reload => true
   action [ :enable, :start ]
 end
-execute "enable-apache2-ssl" do
-  command "a2enmod ssl"
-  notifies :restart, "service[apache2]"
-end
-
+# execute "enable-apache2-ssl" do
+#   command "a2enmod ssl"
+#   notifies :restart, "service[apache2]"
+# end
 
 Chef::Log.info("[Install passenger]")
 gem_package "passenger"
-%w{ libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev}.each do |pkg|
+%w{ apache2-threaded-dev libapr1-dev libaprutil1-dev}.each do |pkg|
   package pkg
 end
 execute "disable-apache2-sites" do
@@ -193,3 +192,4 @@ if node["posty"]["webindex"]["install"]
     end
   end
 end
+
