@@ -108,11 +108,11 @@ execute "bundle install" do
   cwd node["posty"]["api"]["location"]
   not_if 'bundle check', :cwd => node["posty"]["api"]["location"]
 end
-execute "rake db:migrate" do
+execute "bundle exec rake db:migrate" do
   cwd node["posty"]["api"]["location"]
   environment ({'RACK_ENV' => node["posty"]["api"]["rack_env"]})
 end
-execute "rake api_key:generate" do
+execute "bundle exec rake api_key:generate" do
   cwd node["posty"]["api"]["location"]
   environment ({'RACK_ENV' => node["posty"]["api"]["rack_env"]})
   not_if "echo ApiKey.first.access_token | RACK_ENV=production bundle exec racksh | egrep -q -o [0-9a-z]{32}",
